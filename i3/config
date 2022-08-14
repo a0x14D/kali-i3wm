@@ -1,0 +1,327 @@
+# i3 Config
+## General
+### Mod key
+set $mod Mod4
+set $alt Mod1
+### Font
+font xft:monospace 9
+
+### Change focus via jkl;
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+### Change focus via arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+### Move focused window via jkl;
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+### Move focused window via arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+### Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window  pixel 1
+new_float pixel 1
+
+### use Mouse+mod to drag floatinf windows 
+floating_modifier $mod
+
+
+### Hide borders
+hide_edge_borders none
+
+### Change borders
+bindsym $mod+u border none
+bindsym $mod+y border pixel 2
+bindsym $mod+n border normal
+
+### Make focus follow the mouse
+focus_follows_mouse yes
+
+### Split orientation for the next container
+bindsym $mod+h split h; exec dunstify -a i3-gaps 'Tiling horizontally'
+bindsym $mod+v split v; exec dunstify -a i3-gaps 'Tiling vertically'
+bindsym $mod+Shift+q split toggle
+
+### Change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+### Change focus between tiling/floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+### Toggle tiling/floating container
+bindsym $mod+space floating toggle
+
+### Toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+### Toggle sticky container
+bindsym $mod+Shift+s sticky toggle
+
+### Focus at the parent container
+bindsym $mod+a focus parent
+
+### Kill focused container
+bindsym $mod+q kill
+
+### Resize container
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # Resize using jkl;
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
+
+        # Resize using arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # Exit resize mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+### System menu
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # Exit system mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+### Reload the configuration file
+bindsym $mod+Shift+c reload
+
+### Restart i3 inplace
+bindsym $mod+Shift+r restart
+
+### Exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+## Workspaces
+### Set workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
+### Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+
+### Move focused window to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+
+### Move focused window to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+
+### Navigate between workspaces
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+### Move focused containers between screens
+# bindsym $mod+o move workspace to output left
+# bindsym $mod+p move workspace to output right
+
+### Switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+### Container specific settings
+for_window [class="Lxappearance"] floating enable
+for_window [window_role="About"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [class="burp-StartBurp"] floating enable
+for_window [class="burp-StartBurp" title=".* v"] floating disable
+for_window [class="Maltego" title=" "] floating enable
+for_window [class="Maltego" title="Maltego"] floating disable
+no_focus [window_role="pop-up"]
+no_focus [window_type="notification"]
+
+### Force floating for all new containers
+# for_window [class="[.]*"] floating enable
+
+## Keybinds
+### Application keybinds
+bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec pcmanfm
+bindsym $mod+F3 exec urxvt -e 'ranger'
+bindsym $mod+Return exec kitty
+#bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#0A0E14' -nf '#59c2ff' -sb '#59c2ff' -sf '#191919' -fn 'Caskaydia Cove Nerd Font:bold:pixelsize=14'
+bindsym $mod+d exec rofi -lines 12 -padding 18 -width 35 -location 0 -show drun -sidebar-mode -columns 2 -font 'Caskaydia Cove Nerd Font 12' -show-icons
+bindsym $alt+Shift+d --release exec "killall dunst; exec dunstify -a dunst -u normal 'Restarting dunst'"
+bindsym $mod+Print --release exec --no-startup-id scrot -q 100 -e 'mv $f ~/Pictures' && sleep 0.5 && dunstify -a scrot -u normal "Screenshot has been saved in Pictures"
+bindsym $mod+Shift+Print --release exec --no-startup-id scrot -w -q 100 -e 'mv $f ~/Pictures' && sleep 0.5 && dunstify -a scrot -u normal "Screenshot has been saved in Pictures"
+bindsym $mod+Ctrl+Print --release exec --no-startup-id scrot -s -q 100 -e 'mv $f ~/Pictures' && sleep 0.5 && dunstify -a scrot -u normal "Screenshot has been saved in Pictures"
+
+### System keybinds
+bindsym XF86MonBrightnessUp exec /usr/bin/brightnessControl up
+bindsym XF86MonBrightnessDown exec /usr/bin/brightnessControl down
+bindsym XF86AudioRaiseVolume exec /usr/bin/volumeControl up
+bindsym XF86AudioLowerVolume exec /usr/bin/volumeControl down
+bindsym XF86AudioMute exec /usr/bin/volumeControl mute
+# bindsym XF86AudioPlay exec playerctl play-pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previous
+
+## Execs
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id betterlockscreen -u /usr/share/backgrounds/kali/kali-actiniaria-16x9.png
+exec --no-startup-id nm-applet
+exec --no-startup-id numlockx on
+exec --no-startup-id pa-applet
+exec --no-startup-id pulseaudio
+exec --no-startup-id vmware-user-suid-wrapper
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id feh --bg-fill ~/Pictures/wallhaven-96okw1.jpg
+#exec_always --no-startup-id pkill polybar; polybar -r main
+exec_always --no-startup-id picom --no-use-damage --experimental-backends
+exec_always --no-startup-id xrdb -load .Xresources
+exec_always --no-startup-id autotiling
+
+#scratchpads
+bindsym $alt+minus move scratchpad 
+bindsym $alt+plus scratchpad show 
+
+### NOTE
+# To set wallpapers for individual monitors with betterlockscreen:
+# exec --no-startup-id betterlockscreen -u ~/Pictures/horizontal.png --display 1 -u ~/Pictures/vertical.png --display 2
+# For more information: https://github.com/betterlockscreen/betterlockscreen
+
+## i3-gaps
+### Set inner/outer gaps
+gaps inner 10
+gaps outer 10
+
+### Set inner/outer gaps for current/all & set/plus/minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+### Smart borders
+smart_borders on
+
+### Modify inner/outer gaps.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bar {
+        status_command  i3blocks -c ~/.config/i3blocks/i3blocks.conf
+        position top
+        font pango:FontAwesome 10
+        colors {
+    background #2f343f
+    statusline #FFFFFF
+    separator  #666666
+
+    focused_workspace  #00ff00 #333333 #00ff00
+    active_workspace   #333333 #222222 #000000
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #2F343A #900000 #000000
+    binding_mode      #2F343A #900000 #FFFFFF
+    # colour of border, background, and text
+    }
+}
+
+### Appearance
+set $bg-color 	           #E6E6E6
+set $inactive-bg-color     #252E35
+set $text-color            #252E35
+set $inactive-text-color   #E6E6E6
+set $urgent-bg-color       #D41919
+
+#                         border               background           text
+client.focused            $bg-color            $bg-color            $text-color
+client.unfocused          $inactive-bg-color   $inactive-bg-color   $inactive-text-color
+client.focused_inactive   $inactive-bg-color   $inactive-bg-color   $inactive-text-color
+client.urgent             $urgent-bg-color     $urgent-bg-color     $text-color
