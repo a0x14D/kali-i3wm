@@ -65,7 +65,7 @@ case $neovim in
   [yY])
     echo -e "\e[1;33getting neovim\n"
     wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb && sudo dpkg -i nvim-linux64.deb 
-    git clone https://github.com/aunknownwhoami/nvim.git ~/.config/nvim
+    git clone https://github.com/LunarVim/nvim-basic-ide.git ~/.config/nvim
     ;;
   [Nn])
     echo -e "\n\e[1;7;31mok Download later Manually\n\e[0m"
