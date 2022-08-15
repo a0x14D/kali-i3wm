@@ -4,6 +4,9 @@
 kali linux has some desktop varients like gnome,xfce,kde But tailing window manager ins awesome it consuming low RAM gives better perfomance So i decide to build custom kali linux 
 AND create automating SCRIPTS in repo
 
+## 🔗 Links
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white) ](https://www.youtube.com/channel/UCRBBCrSmTynDneFL2MhtCEQ)
+
 
 ## Features
 
