@@ -20,6 +20,7 @@ echo -e "printing directores\n"
 
 sudo cp ramclean /usr/bin/ 
 
+sudo sh fonts.sh
 
 echo -e "\n\e[1;7;49;35mchanging sources\e[0m"
 echo -e "\nchanging repositories list [\e[1;31mhttp.kali.org\e[0m] => [\e[1;33mkali.downloaded.org\e[0m]"
@@ -64,7 +65,7 @@ case $neovim in
   [yY])
     echo -e "\e[1;33getting neovim\n"
     wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb && sudo dpkg -i nvim-linux64.deb 
-    cp -r nvim $HOME/.config/
+    git clone https://github.com/aunknownwhoami/nvim.git ~/.config/nvim
     ;;
   [Nn])
     echo -e "\n\e[1;7;31mok Download later Manually\n\e[0m"
