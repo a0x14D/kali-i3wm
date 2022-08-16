@@ -7,6 +7,10 @@ AND create automating SCRIPTS in repo
 ## 🔗 Links
 [![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white) ](https://www.youtube.com/channel/UCRBBCrSmTynDneFL2MhtCEQ)
 
+[![gif with examples][examples-link]][examples-link]
+
+## Demo video 
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/icuUi2jLvBI)
 
 ## Features
 
