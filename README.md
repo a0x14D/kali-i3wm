@@ -33,6 +33,8 @@ AND create automating SCRIPTS in repo
 | --- | --- |
 |`mod = windows key`| windows key |
 |`alt = alt`| ALT key |
+|`mod + F1` | open firefox |
+|`mod + F2` | open FileManager |
 | `mod + Enter` | open terminal (default: kitty)|
 | `mod + q` | quiet windows |
 | `mod + Shift + r` | execute restart |
