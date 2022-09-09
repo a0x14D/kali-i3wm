@@ -45,7 +45,7 @@ AND create automating SCRIPTS in repo
 | `mod + Shift + Space` | tiling window |
 
 more keybindings in config file 
-cat ~/.config/i3/config
+`cat ~/.config/i3/config`
 
 
 </details>
