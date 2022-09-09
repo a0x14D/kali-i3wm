@@ -1,5 +1,5 @@
 
-# Kali i3-gaps
+# 💻 Kali i3-gaps
 
 kali linux has some desktop varients like gnome,xfce,kde But tailing window manager ins awesome it consuming low RAM gives better perfomance So i decide to build custom kali linux 
 AND create automating SCRIPTS in repo
@@ -9,10 +9,10 @@ AND create automating SCRIPTS in repo
 
 ![](https://github.com/aunknownwhoami/kali-i3wm/blob/master/examples.gif)
 
-## Demo video 
+## 🎥 Demo video 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/icuUi2jLvBI)
 
-## Features
+## 🍀 Features
 
 - firefox block fonts
 - i3blocks wlan,battery,ram cache cleaner
@@ -23,26 +23,42 @@ AND create automating SCRIPTS in repo
 - autotiling
 
 
-## Screenshots
+## ⚒️ Basic commands
 
-![kali-i3wm](https://github.com/aunknownwhoami/kali-i3wm/tree/main/screenshorts)
+<details>
+<summary> keyboard commands [Click to expand! ⬅️]</summary>
+<!-- commands in table -->
+ 
+| Command | Description |
+| --- | --- |
+|`mod = windows key`| windows key |
+|`alt = alt`| ALT key |
+| `mod + Enter` | open terminal (default: kitty)|
+| `mod + q` | quiet windows |
+| `mod + Shift + r` | execute restart |
+| `mod + 1-9` | workspace |
+| `mod + 0` | open system status (lock,poweroff,exit,suspend) |
+| `mod + d` | open menu (rofi) |
+| `alt + -` | hide window |
+| `alt + =` | unhide window |
+| `mod + Space` | float window |
+| `mod + Shift + Space` | tiling window |
+
+more keybindings in config file 
+cat ~/.config/i3/config
 
 
-## Authors
+</details>
+
+## :writing_hand: Authors
 
 - [@aunknown333](https://github.com/aunknownwhoami)
 
-
-## Demo
-
-some pices on my linux 
-
-https://github.com/aunknownwhoami/kali-i3wm/blob/main/Merged_document.gif
 ## 🚀 About Me
 Hi, i am aunknown self learner and [knowlage of hacking] creating bash automate tools
 
 
-## Installation
+## 💠 Installation
 
 Download iso i3-gaps below
 ```
