@@ -24,9 +24,6 @@ AND create automating SCRIPTS in repo
 
 
 ## ⚒️ Basic commands
-
-<details>
-<summary> keyboard commands [Click to expand! ⬅️]</summary>
 <!-- commands in table -->
  
 | Command | Description |
@@ -48,9 +45,6 @@ AND create automating SCRIPTS in repo
 
 more keybindings in config file 
 `cat ~/.config/i3/config`
-
-
-</details>
 
 ## :writing_hand: Authors
 
