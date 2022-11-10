@@ -22,20 +22,20 @@ echo -e "\e[1;49;32minstalling autotiling\e[0m\n"
 sudo cp -r autotiling /usr/bin/ 
 pip install i3ipc || pip install i3ipc
 
-echo -e "\e[1;49;32mimporting wallpaper[HOME/picture]\e[0m\n"
-cp -r wallpaper/* $HOME/Pictures/
+#echo -e "\e[1;49;3echo -e "\e[1;49;32mimporting wallpaper[HOME/picture]\e[0m\n"
+#echo -e "\e[1;49;3cp -r wallpaper/* $HOME/Pictures/
 
 echo -e "\e[1;49;32msetting up i3[HOME/.config/i3]\e[0m\n"
 cp -r $HOME/.config/i3 $HOME/.config/i3.backup && cp -r i3 $HOME/.config/
 
-echo -e "\e[1;49;32msetup i3blocks[HOME/.config/i3blocks]\e[0m\n"
-cp -r i3blocks $HOME/.config/
+# echo -e "\e[1;49;32msetup i3blocks[HOME/.config/i3blocks]\e[0m\n"
+# cp -r i3blocks $HOME/.config/
 
-echo -e "\e[1;49;32mdownloading i3blocks\e[0m\n"
-sudo apt install i3blocks
+# echo -e "\e[1;49;32mdownloading i3blocks\e[0m\n"
+# sudo apt install i3blocks
 
-echo -e "\e[1;49;32mchanging login wallpaer[/etc/lightdm/]\e[0m\n"
-sudo cp -r slick-greeter.conf /etc/lightdm/ 
+# echo -e "\e[1;49;32mchanging login wallpaer[/etc/lightdm/]\e[0m\n"
+# sudo cp -r slick-greeter.conf /etc/lightdm/ 
 
 echo -e "\e[1;49;32msetting up picom[HOME/.config/picom]\e[0m\n"
 cp $HOME/.config/picom/picom.conf $HOME/.config/picom/picom.conf.backup && cp picom.conf $HOME/.config/picom/ 
@@ -54,8 +54,8 @@ case $spaceship in
     echo -e "\nskipping next thing"
 esac
 
-echo -e "\e[1;49;32minstall depencies\e[0m\n"
-sudo apt install nodejs npm 
+# echo -e "\e[1;49;32minstall depencies\e[0m\n"
+# sudo apt install nodejs npm 
 
 echo -e "\e[1;49;32mUpdating fully system\e[0m\n"
 sudo apt update && sudo apt upgrade -y 
