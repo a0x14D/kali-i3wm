@@ -201,7 +201,7 @@ no_focus [window_type="notification"]
 ## Keybinds
 ### Application keybinds
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec pcmanfm
+bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec urxvt -e 'ranger'
 bindsym $mod+Return exec kitty
 #bindsym $mod+d exec rofi -show run
@@ -231,9 +231,10 @@ exec --no-startup-id pa-applet
 exec --no-startup-id pulseaudio
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id feh --bg-fill ~/Pictures/wallhaven-96okw1.jpg
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id flameshot
 #exec_always --no-startup-id pkill polybar; polybar -r main
-exec_always --no-startup-id picom --no-use-damage --experimental-backends
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id autotiling
 
@@ -296,7 +297,12 @@ mode "$mode_gaps_outer" {
 }
 
 bar {
-        status_command  i3blocks -c ~/.config/i3blocks/i3blocks.conf
+         
+      status_command ~/.config/bumblebee-status/bumblebee-status\
+      -m title traffic nic pasink brightness battery date time \
+      -p battery.interval=1 amixer.interval=1 traffic.showname=False  \
+      -t iceberg-rainbow
+
         position top
         font pango:FontAwesome 10
         colors {
