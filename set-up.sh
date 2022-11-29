@@ -31,14 +31,15 @@ read -p "Do you want to change repositories list? [y/n]:" repo
 case $repo in
   [yY])
     echo -e "\n\e[1;32mchanging repositories list\e[0m"
-   sudo sed -i 's/http.kali.org/kali.download/g' /etc/apt/sources.list
+   # sudo sed -i 's/http.kali.org/kali.download/g' /etc/apt/sources.list
+   echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
+   echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
      ;;
    [Nn])
      echo -e "\n\e[1;37mok continue next step\e[0m "
      ;;
     *)
      echo -e "\n\e[1;5;31mChoose (y/n)\e[0m"
-     break
      ;; 
 
 
