@@ -21,7 +21,7 @@ sudo cp -r ./scripts/autotiling /usr/bin/
 pip install i3ipc || pip install i3ipc
 
 echo -e "\e[1;49;32minstalling bumblebee-status\e[0m\n"
-cp -r ./config/bumblebee-status ~/.config/
+git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git ~/.config/bumblebee-status
 pip install netifaces psutil
 
 echo -e "\e[1;49;32msetting up i3[HOME/.config/i3]\e[0m\n"
