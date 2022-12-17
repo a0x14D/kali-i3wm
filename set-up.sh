@@ -9,7 +9,7 @@ echo " / __ \|  |  /   |  \    <|   |  (  <_> )     /   |  \/       \/       \/ 
 echo "(____  /____/|___|  /__|_ \___|  /\____/ \/\_/|___|  /______  /______  /______  / "
 echo "     \/           \/     \/    \/                  \/       \/       \/       \/  ";
 
-sudo sh touchpad
+sudo bash ./scripts/touchpad
 echo -e "fixing touchpad\n"
 
 sudo cp kali_miss/* /lib/firmware/i915/
@@ -18,7 +18,7 @@ echo -e "fixing missing modules\n"
 xdg-user-dirs-update
 echo -e "printing directores\n"
 
-sudo cp ramclean /usr/bin/ 
+sudo cp ./scripts/ramclean /usr/bin/ 
 
 sudo sh fonts.sh
 
@@ -85,7 +85,7 @@ case $ohmyzsh in
   [yY])
     echo -e "\e[1;33minstalling ohmyzsh\n"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" $HOME
-    sh zsh.sh && sudo sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete)'#
+    sh ./scripts/zsh.sh && sudo sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete)'#
     
     ;;
   [Nn])
