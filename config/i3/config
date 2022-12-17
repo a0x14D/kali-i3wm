@@ -1,4 +1,4 @@
-# i3 Config
+# i3 Configconcon
 ## General
 ### Mod key
 set $mod Mod4
@@ -44,7 +44,7 @@ hide_edge_borders none
 ### Change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 2
-bindsym $mod+n border normal
+# bindsym $mod+n border normal
 
 ### Make focus follow the mouse
 focus_follows_mouse yes
@@ -202,15 +202,17 @@ no_focus [window_type="notification"]
 ### Application keybinds
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec thunar
-bindsym $mod+F3 exec urxvt -e 'ranger'
+bindsym $mod+F3 exec kitty 'ranger'
 bindsym $mod+Return exec kitty
 #bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#0A0E14' -nf '#59c2ff' -sb '#59c2ff' -sf '#191919' -fn 'Caskaydia Cove Nerd Font:bold:pixelsize=14'
-bindsym $mod+d exec rofi -lines 12 -padding 18 -width 35 -location 0 -show drun -sidebar-mode -columns 2 -font 'Caskaydia Cove Nerd Font 12' -show-icons
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb '#0A0E14' -nf '#26ff29' -sb '#59c2ff' -sf '#191919' -fn 'Caskaydia Cove Nerd Font:bold:pixelsize=14'
+bindsym $mod+d exec rofi -lines 8 -padding 18 -width 25 -location 0 -show drun -sidebar-mode -columns 2 -show-icons 
 bindsym $alt+Shift+d --release exec "killall dunst; exec dunstify -a dunst -u normal 'Restarting dunst'"
 bindsym $mod+Print --release exec --no-startup-id scrot -q 100 -e 'mv $f ~/Pictures' && sleep 0.5 && dunstify -a scrot -u normal "Screenshot has been saved in Pictures"
 bindsym $mod+Shift+Print --release exec --no-startup-id scrot -w -q 100 -e 'mv $f ~/Pictures' && sleep 0.5 && dunstify -a scrot -u normal "Screenshot has been saved in Pictures"
 bindsym $mod+Ctrl+Print --release exec --no-startup-id scrot -s -q 100 -e 'mv $f ~/Pictures' && sleep 0.5 && dunstify -a scrot -u normal "Screenshot has been saved in Pictures"
+#--personl keybubinds
+bindsym $mod+n exec --no-startup-id kitty 'nvim'
 
 ### System keybinds
 bindsym XF86MonBrightnessUp exec /usr/bin/brightnessControl up
@@ -228,13 +230,13 @@ exec --no-startup-id betterlockscreen -u /usr/share/backgrounds/kali/kali-actini
 exec --no-startup-id nm-applet
 exec --no-startup-id numlockx on
 exec --no-startup-id pa-applet
-exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio --kill && pulseaudio --start
 exec --no-startup-id vmware-user-suid-wrapper
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id flameshot
 #exec_always --no-startup-id pkill polybar; polybar -r main
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b 
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id autotiling
 
@@ -300,11 +302,12 @@ bar {
          
       status_command ~/.config/bumblebee-status/bumblebee-status\
       -m title traffic nic pasink brightness battery date time \
-      -p battery.interval=1 amixer.interval=1 traffic.showname=False  \
+      -p battery.interval=1 amixer.interval=1 traffic.showname=False brightness.interval=1 \
       -t iceberg-rainbow
 
+
         position top
-        font pango:FontAwesome 10
+        font pango:FontAwesome 11
         colors {
     background #2f343f
     statusline #FFFFFF
