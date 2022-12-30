@@ -20,7 +20,7 @@ echo -e "printing directores\n"
 
 sudo cp ./scripts/ramclean /usr/bin/ 
 
-sudo sh fonts.sh
+sudo sh ./scripts/fonts.sh
 
 echo -e "\n\e[1;7;49;35mchanging sources\e[0m"
 echo -e "\nchanging repositories list [\e[1;31mhttp.kali.org\e[0m] => [\e[1;33mkali.downloaded.org\e[0m]"
