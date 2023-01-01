@@ -72,7 +72,7 @@ exit
 ```
 2.clone my Repo;
 ```bash
-git clone https://github.com/aunknownwhoami/kali-i3wm.git
+git clone https://github.com/a0x14D/kali-i3wm.git
 ```
 3.cd && give execute file
 ```bash
