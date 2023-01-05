@@ -11,7 +11,7 @@ echo "                                                              alive:telegr
 echo "                                                              alive:discode;      "
 
 echo -e "\n\e[1;49;32mconfiguration ohmyzsh\e[0m\n"
-sh zsh.sh && sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete)/g' $HOME/.zshrc
+sh zsh.sh && sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete  zsh-syntax-highlighting zsh-lsd zsh-autopair)/g' $HOME/.zshrc
 
 echo -e "\n\e[1;49;32mconfiguring nala[HOME/.zshrc(end of file)]\e[0m\n"
 cat ./scripts/nala.txt >>$HOME/.zshrc
