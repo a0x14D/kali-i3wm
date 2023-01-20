@@ -58,7 +58,7 @@ Hi, i am aunknown self learner and [knowlage of hacking] creating bash automate 
 
 Download iso i3-gaps below
 ```
-https://drive.google.com/file/d/1RnZv3a9MKE4eO44Qk2KLfmXmjFe8vZpm/view?usp=sharing
+https://drive.google.com/file/d/1e21bQcoJxcBy6IswDJNOH2T3wC_juP8u/view?usp=share_link
 ```
 
 Simple to execute commands 
