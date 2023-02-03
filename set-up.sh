@@ -12,8 +12,6 @@ echo "     \/           \/     \/    \/                  \/       \/       \/   
 sudo bash ./scripts/touchpad
 echo -e "fixing touchpad\n"
 
-sudo cp kali_miss/* /lib/firmware/i915/
-echo -e "fixing missing modules\n"
 
 xdg-user-dirs-update
 echo -e "printing directores\n"
