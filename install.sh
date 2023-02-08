@@ -15,6 +15,7 @@ sh ./scripts/zsh.sh && sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions 
 
 echo -e "\n\e[1;49;32mconfiguring nala[HOME/.zshrc(end of file)]\e[0m\n"
 cat ./scripts/nala.txt >>$HOME/.zshrc
+source ~/.zshrc
 
 echo -e "\e[1;49;32minstalling autotiling\e[0m\n"
 sudo cp -r ./scripts/autotiling /usr/bin/

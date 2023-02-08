@@ -83,7 +83,7 @@ case $ohmyzsh in
   [yY])
     echo -e "\e[1;33minstalling ohmyzsh\n"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" $HOME
-    sh ./scripts/zsh.sh && sudo sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete)'#
+    sh ./scripts/zsh.sh && sudo sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete zsh-lsd )' $HOME/.zshrc
     
     ;;
   [Nn])
