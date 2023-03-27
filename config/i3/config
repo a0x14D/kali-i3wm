@@ -7,32 +7,32 @@ set $alt Mod1
 font xft:monospace 9
 
 ### Change focus via jkl;
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 ### Change focus via arrow keys
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 ### Move focused window via jkl;
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left 20 px 
+bindsym $mod+Shift+j move down 20 px
+bindsym $mod+Shift+k move up 20 px
+bindsym $mod+Shift+l move right 20 px
 
 ### Move focused window via arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 ### Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window  pixel 1
-new_float pixel 1
+new_window  pixel 3
+new_float pixel 3
 
 ### use Mouse+mod to drag floatinf windows 
 floating_modifier $mod
@@ -50,8 +50,8 @@ bindsym $mod+y border pixel 2
 focus_follows_mouse yes
 
 ### Split orientation for the next container
-bindsym $mod+h split h; exec dunstify -a i3-gaps 'Tiling horizontally'
-bindsym $mod+v split v; exec dunstify -a i3-gaps 'Tiling vertically'
+# bindsym $mod+h split h; exec dunstify -a i3-gaps 'Tiling horizontally'
+# bindsym $mod+v split v; exec dunstify -a i3-gaps 'Tiling vertically'
 bindsym $mod+Shift+q split toggle
 
 ### Change container layout
@@ -201,7 +201,7 @@ no_focus [window_type="notification"]
 ## Keybinds
 ### Application keybinds
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec thunar
+bindsym $mod+F2 exec pcmanfm
 bindsym $mod+F3 exec kitty 'ranger'
 bindsym $mod+Return exec kitty
 #bindsym $mod+d exec rofi -show run
@@ -225,7 +225,7 @@ bindsym XF86AudioMute exec /usr/bin/volumeControl mute
 # bindsym XF86AudioPrev exec playerctl previous
 
 ## Execs
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id betterlockscreen -u /usr/share/backgrounds/kali/kali-actiniaria-16x9.png
 exec --no-startup-id nm-applet
 exec --no-startup-id numlockx on
@@ -323,7 +323,7 @@ bar {
 }
 
 ### Appearance
-set $bg-color 	           #E6E6E6
+set $bg-color 	          #2be6ff
 set $inactive-bg-color     #252E35
 set $text-color            #252E35
 set $inactive-text-color   #E6E6E6
