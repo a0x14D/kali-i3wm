@@ -11,7 +11,9 @@ echo "                                                              alive:telegr
 echo "                                                              alive:discode;      "
 
 echo -e "\n\e[1;49;32mconfiguration ohmyzsh\e[0m\n"
-sh ./scripts/zsh.sh && sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete  zsh-syntax-highlighting zsh-lsd zsh-autopair)/g' $HOME/.zshrc
+curl -fsSL https://raw.githubusercontent.com/a0x14D/tools/master/cli/ohmyzsh.sh | bash
+
+sleep 2
 
 echo -e "\n\e[1;49;32mconfiguring nala[HOME/.zshrc(end of file)]\e[0m\n"
 cat ./scripts/nala.txt >>$HOME/.zshrc

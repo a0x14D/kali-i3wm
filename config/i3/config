@@ -236,7 +236,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id flameshot
 #exec_always --no-startup-id pkill polybar; polybar -r main
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b 
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b  --experimental-backends
 exec_always --no-startup-id xrdb -load .Xresources
 exec_always --no-startup-id autotiling
 
@@ -323,7 +323,7 @@ bar {
 }
 
 ### Appearance
-set $bg-color 	          #2be6ff
+set $bg-color 	           #2be6ff
 set $inactive-bg-color     #252E35
 set $text-color            #252E35
 set $inactive-text-color   #E6E6E6
