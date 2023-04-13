@@ -9,18 +9,16 @@ echo " / __ \|  |  /   |  \    <|   |  (  <_> )     /   |  \/       \/       \/ 
 echo "(____  /____/|___|  /__|_ \___|  /\____/ \/\_/|___|  /______  /______  /______  / "
 echo "     \/           \/     \/    \/                  \/       \/       \/       \/  ";
 
-sudo sh touchpad
+sudo bash ./scripts/touchpad
 echo -e "fixing touchpad\n"
 
-sudo cp kali_miss/* /lib/firmware/i915/
-echo -e "fixing missing modules\n"
 
 xdg-user-dirs-update
 echo -e "printing directores\n"
 
-sudo cp ramclean /usr/bin/ 
+sudo cp ./scripts/ramclean /usr/bin/ 
 
-sudo sh fonts.sh
+sudo sh ./scripts/fonts.sh
 
 echo -e "\n\e[1;7;49;35mchanging sources\e[0m"
 echo -e "\nchanging repositories list [\e[1;31mhttp.kali.org\e[0m] => [\e[1;33mkali.downloaded.org\e[0m]"
@@ -31,14 +29,15 @@ read -p "Do you want to change repositories list? [y/n]:" repo
 case $repo in
   [yY])
     echo -e "\n\e[1;32mchanging repositories list\e[0m"
-   sudo sed -i 's/http.kali.org/kali.download/g' /etc/apt/sources.list
+   # sudo sed -i 's/http.kali.org/kali.download/g' /etc/apt/sources.list
+   echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
+   echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
      ;;
    [Nn])
      echo -e "\n\e[1;37mok continue next step\e[0m "
      ;;
     *)
      echo -e "\n\e[1;5;31mChoose (y/n)\e[0m"
-     break
      ;; 
 
 
@@ -84,7 +83,7 @@ case $ohmyzsh in
   [yY])
     echo -e "\e[1;33minstalling ohmyzsh\n"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" $HOME
-    sh zsh.sh && sudo sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete)'#
+    sh ./scripts/zsh.sh && sudo sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-autocomplete zsh-lsd )' $HOME/.zshrc
     
     ;;
   [Nn])

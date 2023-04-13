@@ -1,0 +1,22 @@
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}
+
+#nvim export EDITOR='nvim'
+#export EDITOR='nvim'
+#export VISUAL='nvim'
+
+#zoxi
+#eval "$(zoxide init zsh)"
+
+#eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+#eval $(thefuck --alias FUCK)
+
+#export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview-window=right:60%:wrap --preview "batcat --color=always --style=numbers --line-range :500 {}"'
+
