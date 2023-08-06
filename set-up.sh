@@ -9,8 +9,8 @@ echo " / __ \|  |  /   |  \    <|   |  (  <_> )     /   |  \/       \/       \/ 
 echo "(____  /____/|___|  /__|_ \___|  /\____/ \/\_/|___|  /______  /______  /______  / "
 echo "     \/           \/     \/    \/                  \/       \/       \/       \/  ";
 
-sudo bash ./scripts/touchpad
-echo -e "fixing touchpad\n"
+# sudo bash ./scripts/touchpad
+# echo -e "fixing touchpad\n"
 
 
 xdg-user-dirs-update
@@ -27,33 +27,34 @@ read -p "Do you want to change repositories list? [y/n]:" repo
 
 
 case $repo in
-  [yY])
-    echo -e "\n\e[1;32mchanging repositories list\e[0m"
-   # sudo sed -i 's/http.kali.org/kali.download/g' /etc/apt/sources.list
-   echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
-   echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
-     ;;
-   [Nn])
-     echo -e "\n\e[1;37mok continue next step\e[0m "
-     ;;
-    *)
-     echo -e "\n\e[1;5;31mChoose (y/n)\e[0m"
-     ;; 
+ [yY])
+   echo -e "\n\e[1;32mchanging repositories list\e[0m"
+  # sudo sed -i 's/http.kali.org/kali.download/g' /etc/apt/sources.list
+  echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee /etc/apt/sources.list
+  echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" | sudo tee -a /etc/apt/sources.list
+    ;;
+  [Nn])
+    echo -e "\n\e[1;37mok continue next step\e[0m "
+    ;;
+   *)
+    echo -e "\n\e[1;5;31mChoose (y/n)\e[0m"
+    ;; 
 
 
-   esac
+  esac
 
-   echo -e "\n\e[1;7;49;96mDo You Want To Change [APT to NALA]\e[0m\n"
-   read -p "Do you want to change apt => nala [y/n] ?:" nala 
-   case $nala in
-      [Yy])
-        sudo apt update && sudo apt install nala 
-        cat nala.txt >> $HOME/.zshrc 
-        echo -e "\n\e[1;49;32mcomplete sucessfully " ;;
-      [Nn])
-        echo -e "As Your Wish\n "
-    
-      esac        
+  echo -e "\n\e[1;7;49;96mDo You Want To Change [APT to NALA]\e[0m\n"
+  read -p "Do you want to change apt => nala [y/n] ?:" nala 
+  case $nala in
+     [Yy])
+       sudo apt update && sudo apt install nala 
+       cat nala.txt >> $HOME/.zshrc 
+       echo -e "\n\e[1;49;32mcomplete sucessfully " ;;
+     [Nn])
+       cat nala.txt >> $HOME/.zshrc 
+       echo -e "As Your Wish\n "
+   
+     esac        
 
 echo -e "\n\e[1;34mNEovim\n\e[0m"
 
@@ -61,17 +62,17 @@ read -p "Do you want my neovim [y/n]:" neovim
 
 
 case $neovim in 
-  [yY])
-    echo -e "\e[1;33getting neovim\n"
-    wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb && sudo dpkg -i nvim-linux64.deb 
-    git clone https://github.com/aunknownwhoami/nvim.git ~/.config/nvim
-    ;;
-  [Nn])
-    echo -e "\n\e[1;7;31mok Download later Manually\n\e[0m"
-    ;;
-   *)
-     echo -e "\n\e[1;5;31mChoose (y/n)\e[0m";; 
-  
+ [yY])
+   echo -e "\e[1;33getting neovim\n"
+   sudo dpkg -i ./config/neovim.deb
+   git clone https://github.com/aunknownwhoami/nvim.git ~/.config/nvim
+   ;;
+ [Nn])
+   echo -e "\n\e[1;7;31mok Download later Manually\n\e[0m"
+   ;;
+  *)
+    echo -e "\n\e[1;5;31mChoose (y/n)\e[0m";; 
+ 
 esac
 
 echo -e "\n\e[4;49;01mOH-MY-ZSH\n\e[0m"

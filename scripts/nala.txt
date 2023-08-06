@@ -1,15 +1,17 @@
-sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
-}
+#sudo() {
+#  if [ "$1" = "apt" ]; then
+#    shift
+#    command sudo nala "$@"
+#  else
+#    command sudo "$@"
+#  fi
+#}
 
 #nvim export EDITOR='nvim'
-#export EDITOR='nvim'
-#export VISUAL='nvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
+#set sudoeditor to nvim
+export SUDO_EDITOR=nvim
 
 #zoxi
 #eval "$(zoxide init zsh)"
@@ -20,3 +22,9 @@ sudo() {
 
 #export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview-window=right:60%:wrap --preview "batcat --color=always --style=numbers --line-range :500 {}"'
 
+# path function 
+path () {
+    export PATH="$PATH:$1"
+}
+
+path ~/.local/bin

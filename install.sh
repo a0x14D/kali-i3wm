@@ -50,8 +50,6 @@ fi
 echo -e "\e[1;49;32mstarship\e[0m\n"
 cp -r ./config/starship.toml $HOME/.config/
 
-echo -e "\e[1;49;32mnodejs\e[0m\n"
-sudo apt install nodejs npm
 
 echo -e "\e[1;49;32minstalling spaceship\e[0m\n"
 read -p "Do you want to install spaceship theame ohmyzsh:[y/n]" spaceship
@@ -65,8 +63,4 @@ case $spaceship in
 	;;
 esac
 
-echo -e "\e[1;49;32mUpdating fully system\e[0m\n"
-sudo apt update && sudo apt upgrade -y
 
-echo -e "\e[1;49;32mREBOOT\n"
-reboot
