@@ -2,13 +2,23 @@
 
 sudo mkdir -p /etc/X11/xorg.conf.d && sudo tee <<'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf 1> /dev/null
 Section "InputClass"
-        Identifier "touchpad"
+        Identifier "libinput touchpad catchall"
         MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
         Driver "libinput"
-        Option "Tapping" "on"
-        Option "TappingButtonMap" "lrm"
-        Option "NaturalScrolling" "on"
-        Option "ScrollMethod" "twofinger"
+EndSection
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+    Option "Tapping" "on"
+    Option "NaturalScrolling" "true"
+    Option "ClickMethod" "clickfinger"
+    Option "TappingButtonMap" "lrm"
+    Option "AccelSpeed" "0.2"
+    Option "DisableWhileTyping" "true"
 EndSection
 
 EOF
